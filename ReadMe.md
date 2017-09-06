@@ -1,7 +1,7 @@
 # scRNASeqHumanMarinovSplitPool
 
 This package contains a Bioconductor 
-    `SingleCellExperiment` from Marinov et al. (2014) paper 
+    [`SingleCellExperiment`](https://bioconductor.org/packages/devel/bioc/html/SingleCellExperiment.html) from Marinov et al. (2014) paper 
     that performed a pool/split experiment of single cell and 
     bulk cell experiments from GM12878 cell line ([PMID: 24299736](https://www.ncbi.nlm.nih.gov/pubmed/24299736)). 
     Metadata and pre-processed data (FPKM) were downloaded
@@ -18,13 +18,16 @@ install_github("stephaniehicks/scRNASeqHumanMarinovSplitPool")
 
 # Load data
 
-The data is provided as a `ExpressionSet` object can be loaded 
+The data is provided as a `SingleCellExperiment` object can be loaded 
 by running the following code in R: 
 
 ```r
 library(scRNASeqHumanMarinovSplitPool)
 data(sce_marinov)
-sce
+
+assay(sce) # FPKMs
+colData(sce) # phenotypic information
+rowData(sce) # gene-level information
 ```
 
 # Bug reports
